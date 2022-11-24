@@ -14,11 +14,12 @@ To write a program to predict the profit of a city using the linear regression m
 4.Plot the Cost function using Gradient Descent and generate the required graph.
 
 ## Program:
-```
-/*
+~~~
 Program to implement the linear regression using gradient descent.
 Developed by: Anusha R
 RegisterNumber:  212221230006
+~~~
+```
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -31,9 +32,6 @@ plt.ylabel("Profit ($10,000)")
 plt.title("Profit Prediction")
 
 def computeCost(X,y,theta):
-    """"
-    Take in a numpy array X,y,theta and generate the cost function of using theta as a parameter in a linera regression tool   
-    """
     m=len(y) 
     h=X.dot(theta) 
     square_err=(h-y)**2
@@ -47,10 +45,6 @@ theta=np.zeros((2,1))
 computeCost(X,y,theta) 
 
 def gradientDescent(X,y,theta,alpha,num_iters):
-    """"
-    Take in numpy array X,y and theta and update theta by taking num_iters gradient steps with learning rate of alpha 
-    return theta and the list of the cost of the theta during each iteration
-    """
     m=len(y)
     J_history=[] #empty list
     for i in range(num_iters):
@@ -80,9 +74,6 @@ plt.ylabel("Profit ($10,000)")
 plt.title("Profit Prediction")
 
 def predict(x,theta):
-    """"
-    Takes in numpy array of x and theta and return the predicted valude of y based on theta
-    """
     predictions=np.dot(theta.transpose(),x)
     return predictions[0]
 
@@ -91,18 +82,23 @@ print("For Population = 35000, we predict a profit of $"+str(round(predict1,0)))
 
 predict2=predict(np.array([1,7]),theta)*10000
 print("For Population = 70000, we predict a profit of $"+str(round(predict2,0)))
-*/
 ```
 
 ## Output:
-
-
-![6666](https://user-images.githubusercontent.com/94747031/193342362-8c2bc825-5f6c-49cc-b58f-a2cacc4b3782.png)
-![0000](https://user-images.githubusercontent.com/94747031/193342367-20be0b59-2813-4d7b-a5e1-83b8dbf8e6d1.png)
-![99999](https://user-images.githubusercontent.com/94747031/193342369-faff7d40-aea9-45a4-90d8-cd677adb57c5.png)
-![8888](https://user-images.githubusercontent.com/94747031/193342370-e2e9d9fd-1b2e-4a92-8821-6b4714fad6bc.png)
-![7777](https://user-images.githubusercontent.com/94747031/193342373-d6296f86-5c1b-4d23-819b-a367784628a0.png)
-
+### Profit Prediction :
+![output](./i1.png)
+### Function Output :
+![output](./i2.png)
+### Gradient Descent :
+![output](./i3.png)
+### Cost function using Gradient Descent :
+![output](./i4.png)
+### Linear Regression using Profit Prediction :
+![output](./i5.png)
+### Profit Prediction for a population of 35000 :
+![output](./i6.png)
+### Profit Prediction for a population of 70000 :
+![output](./i7.png)
 
 ## Result:
 Thus the program to implement the linear regression using gradient descent is written and verified using python programming.
